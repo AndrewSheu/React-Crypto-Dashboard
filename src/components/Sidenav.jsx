@@ -17,10 +17,15 @@ const Sidenav = () => {
     },
   ];
   return (
-    <Stack justify={"space-between"} boxShadow="small" W={"16rem"} h={"100vh"}>
+    <Stack
+      justify={"space-between"}
+      boxShadow={{ base: "none", lg: "lg" }}
+      W={{ base: "full", lg: "16rem" }}
+      h={"100vh"}
+    >
       <Box>
         <Heading textAlign={"center"} fontSize={"20px"} as={"h1"} pt={"56px"}>
-          @ANDREWACCOUNT
+          @ANDYACCOUNT
         </Heading>
         <Box mt={"6"} mx={"3"}>
           {navLinks.map((nav) => (

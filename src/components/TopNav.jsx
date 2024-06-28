@@ -11,18 +11,17 @@ import {
   HStack,
   Icon,
 } from "@chakra-ui/react";
-import { FaUser } from "react-icons/fa6";
+import { FaUser, FaBars } from "react-icons/fa6";
 
-const TopNav = ({ title }) => {
+const TopNav = ({ title, onOpen }) => {
   return (
-    <Box>
-      <HStack
-        maxW={"1280px"}
-        h={"16"}
-        justify={"space-between"}
-        px={"32"}
-        mx={"auto"}
-      >
+    <Box px={"4"}>
+      <HStack maxW={"70rem"} h={"16"} justify={"space-between"} mx={"auto"}>
+        <Icon
+          as={FaBars}
+          onClick={onOpen}
+          display={{ base: "block", lg: "none" }}
+        />
         <Heading fontWeight={"medium"} fontSize={"28px"}>
           {title}
         </Heading>
