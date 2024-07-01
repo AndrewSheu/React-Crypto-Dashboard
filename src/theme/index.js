@@ -9,7 +9,7 @@ export const theme = extendTheme(
       },
 
       p: {
-        orange: "#5F00D9",
+        purple: "#5F00D9",
         black: "#171717",
       },
       black: {

@@ -7,6 +7,11 @@ import {
   Flex,
   Button,
   Image,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
 } from "@chakra-ui/react";
 import { BsArrowUpRight } from "react-icons/bs";
 import { FaCirclePlus, FaCircleMinus } from "react-icons/fa6";
@@ -16,7 +21,7 @@ const PriceSection = () => {
 
   return (
     <CustomCard>
-      <Flex justify={"space-between"} align={"center"}>
+      <Flex justify={"space-between"} align={"start"}>
         <Stack>
           <HStack color={"black.80"}>
             <Text fontSize={"sm"} color={""}>
@@ -46,14 +51,38 @@ const PriceSection = () => {
           <Button leftIcon={<Icon as={FaCircleMinus} />}>Sell</Button>
         </HStack>
       </Flex>
-      <Image w={"100%"} src="" mt={"48px"} />
-      <HStack justify={"space-between"}>
-        {timestamps.map((timestamp) => (
-          <Text key={timestamp} fontSize={"sm"} color={"black.80"}>
-            {timestamp}
-          </Text>
-        ))}
-      </HStack>
+      <Tabs variant="soft-rounded">
+        <Flex justify="end">
+          <TabList bg={"black.5"} p={"3px"} borderRadius={"6px"}>
+            {["1H", "1D", "1W", "1M"].map((tab) => (
+              <Tab
+                _selected={{ bg: "white" }}
+                key={tab}
+                fontSize={"sm"}
+                p={"6px"}
+                borderRadius={"4"}
+              >
+                {tab}
+              </Tab>
+            ))}
+          </TabList>
+        </Flex>
+        <TabPanels>
+          <TabPanel>
+            <Image w={"100%"} src="/Graph.png" mt={"48px"} />
+            <HStack justify={"space-between"}>
+              {timestamps.map((timestamp) => (
+                <Text key={timestamp} fontSize={"sm"} color={"black.80"}>
+                  {timestamp}
+                </Text>
+              ))}
+            </HStack>
+          </TabPanel>
+          <TabPanel>
+            <p>two!</p>
+          </TabPanel>
+        </TabPanels>
+      </Tabs>
     </CustomCard>
   );
 };
