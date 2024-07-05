@@ -9,8 +9,8 @@ const Dashboard = () => {
   return (
     <DashboardLayout title={"Dashboard"}>
       <Grid
-        gridTemplateColumns={{ base: "repect(1,1fr)", md: "repect(2, 1fr" }}
-        gap={6}
+        gridTemplateColumns={{ base: "repect(1, 1fr)", md: "repect(2, 1fr" }}
+        gap={"6"}
       >
         <GridItem colSpan={2}>
           {" "}
@@ -28,14 +28,21 @@ const Dashboard = () => {
           {" "}
           <InfoCard
             imgUrl={""}
-            // text={
-            //   "Learn more about Loans – Keep your Bitcoin, access it’s value without selling it"
-            // }
+            text={
+              "Learn more about Loans – Keep your Bitcoin, access it’s value without selling it"
+            }
+            tagtext={"Loan"}
           />
         </GridItem>
         <GridItem colSpan={1}>
           {" "}
-          <InfoCard imgUrl="" />
+          <InfoCard
+            imgUrl=""
+            text={
+              "Learn more about our real estate, and corporate account services"
+            }
+            tagtext={"Contact"}
+          />
         </GridItem>
       </Grid>
     </DashboardLayout>
